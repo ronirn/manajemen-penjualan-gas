@@ -19,4 +19,4 @@
 6. Buat database baru dengan nama apk_gas. Klik database apk_gas dan Import database yang ada didalam folder project (nama file database nya apk_gas.sql)
 7. setelah selesai diimport bukan web browser dan ketikkan http://localhost/apk_gas
 8. Aplikasi web berhasil dijalankan
-9. Masuk dengan username admin dan password admin123
+9. Untuk masuk menggunakan username dan password, silahkan chat dinomor ini untuk menanyakan username dan password (085849604654) RONI
