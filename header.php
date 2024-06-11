@@ -17,6 +17,10 @@
     <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
     <script type="text/javascript" src="../assets/js/jquery-ui/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -64,6 +68,34 @@
         .nav-pills .logout {
             margin-top: auto;
         }
+
+        .modal-content {
+            border-radius: 0;
+        }
+
+        .modal-header {
+            background-color: #337ab7;
+            color: #fff;
+            border-bottom: none;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .alert {
+            border-radius: 0;
+        }
+
+        .alert-warning {
+            background-color: #f0ad4e;
+            border-color: #eea236;
+            color: #fff;
+        }
+
+        .modal-footer {
+            border-top: none;
+        }
     </style>
 
 </head>
@@ -89,8 +121,7 @@
         </div>
     </div>
 
-
-    <!-- modal input -->
+    <!-- Modal Input -->
     <div id="modalpesan" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -103,7 +134,10 @@
                     $periksa = mysqli_query($connection, "SELECT * FROM barang WHERE jumlah <=3");
                     while ($q = mysqli_fetch_array($periksa)) {
                         if ($q['jumlah'] <= 3) {
-                            echo "<div style='padding:5px' class='alert alert-warning'><span class='glyphicon glyphicon-info-sign'></span> Stok  <a style='color:red'>" . $q['nama'] . "</a> yang tersisa sudah kurang dari 3 . silahkan pesan lagi !!</div>";
+                            echo "<div class='alert alert-warning' style='padding: 10px; margin-bottom: 10px;'>
+                                <span class='glyphicon glyphicon-info-sign'></span>
+                                Stok <strong style='color: red;'>" . $q['nama'] . "</strong> yang tersisa sudah kurang dari 3. Silahkan pesan lagi!
+                              </div>";
                         }
                     }
                     ?>
@@ -111,7 +145,6 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                 </div>
-
             </div>
         </div>
     </div>
